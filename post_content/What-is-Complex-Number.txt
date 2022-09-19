@@ -1,0 +1,14 @@
+What are Real Numbers?
+Any number which is present in a number system such as positive, negative, zero, integer, rational, irrational, fractions, etc. are real numbers. It is represented as Re(). For example: 12, -45, 0, 1/7, 2.8, √5, etc., are all real numbers.
+
+What are Imaginary Numbers?
+The numbers which are not real are imaginary numbers. When we square an imaginary number, it gives a negative result. It is represented as Im(). Example: √-2, √-7, √-11 are all imaginary numbers.
+
+The complex numbers were introduced to solve the equation x2+1 = 0. The roots of the equation are of form x = ±√-1 and no real roots exist. Thus, with the introduction of complex numbers, we have Imaginary roots.
+
+We denote √-1 with the symbol ‘i’, which denotes Iota (Imaginary number).
+
+Notation
+An equation of the form z= a+ib, where a and b are real numbers, is defined to be a complex number. The real part is denoted by Re z = a and the imaginary part is denoted by Im z = ib.
+
+Z = a + i b
