@@ -1,0 +1,32 @@
+{% extends "HeaderFooter.html" %}
+
+{% block body %}
+		
+		
+		<div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+					{% for post, author in postsNauthors %}
+						<div class="post-preview">
+							<a href="post/{{ post.slug }}" target="_blank">
+								<h2 class="post-title">{{ post.title }}</h2>
+								<h3 class="post-subtitle">{{ post.first30letters }}...</h3>
+							</a>
+							<p class="post-meta">
+								Posted by
+								{% if author.aid != 1 %}
+									<a href="/author/{{ author.aid }}">{{ author.name }}</a>
+								{% else %}
+									<b>{{ author.name }}</b>
+								{% endif %}
+								on {{ post.date }}
+							</p>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+						
+		</div>
+		
+
+{% endblock %}
