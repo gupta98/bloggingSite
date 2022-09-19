@@ -39,7 +39,6 @@ class Contacts(db.Model):
 class Posts(db.Model):
     pid = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String, nullable=False)
-    first30letters = db.Column(db.String(30), nullable=False)
     slug = db.Column(db.String, nullable=False)
     imageurl = db.Column(db.String, nullable=False)
     aid = db.Column(db.Integer, nullable=False)
@@ -187,18 +186,17 @@ def createPost():
             print(file)
             title = request.form.get('title')
             content = request.form.get('content')
-            first30letters = content[:30]
             slug = convert_to_slug(title)
-            imageurl = f"{slug}.jpg" if file else "default.jpg"
+            imageurl = f"{slug}.jpg" if file else ""
             aid = session.get("USERID")
-            with open(f"./post_content/{slug}.txt", "w") as f:
+            with open(f"./post_content/{slug}.txt", "w", encoding="utf8") as f:
                 f.write(content)
             
             print(app.config["UPLOAD_FOLDER"] + imageurl)
             if file or file != "default.jpg":
                 request.files.get('file1').save(app.config["UPLOAD_FOLDER"] + imageurl)
 
-            new_post = Posts(title=title, first30letters=first30letters, slug=slug, imageurl=imageurl, aid=aid, date=dt.now())
+            new_post = Posts(title=title, slug=slug, imageurl=imageurl, aid=aid, date=dt.now())
             db.session.add(new_post)
             db.session.commit()
 
