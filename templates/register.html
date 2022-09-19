@@ -1,0 +1,39 @@
+<html lang="en">
+  <head>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="signin.css" rel="stylesheet">
+  </head>
+
+  <body class="text-center">
+
+    {% for message in get_flashed_messages() %}
+		<div class="alert alert-success">
+		<button type="button" class="close" data-dismiss="alert">&times;</button>
+		{{ message }}
+		</div>
+	{% endfor %}
+	<form class="form-signin" action="/register" method="post">
+      <h1 class="h3 mb-3 font-weight-normal">Register</h1>
+	  <label for="inputName" class="sr-only">Name</label>
+      <input type="text" id="inputName" name="name" class="form-control" placeholder="Name" required autofocus>
+      <label for="inputEmail" class="sr-only">Email address</label>
+      <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address" required autofocus>
+	  <label for="inputPhone" class="sr-only">Phone Number</label>
+      <input type="text" id="inputPhone" name="phone" class="form-control" placeholder="Phone Number" required autofocus>
+	  <label for="inputUsername" class="sr-only">Username</label>
+      <input type="text" id="inputUsername" name="username" class="form-control" placeholder="Username" required autofocus>
+      <label for="inputPassword" class="sr-only">Password</label>
+      <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
+	  <label for="inputAbout" class="sr-only">About</label>
+      <input type="text" id="inputAbout" name="about" class="form-control" placeholder="About" required autofocus>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign In</button>
+      <p class="mt-5 mb-3 text-muted">© Debtanu Gupta</p>
+    </form>
+
+
+ </body>
+</html>

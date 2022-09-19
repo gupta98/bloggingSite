@@ -1,0 +1,29 @@
+<html>
+		
+		<head>
+			<title>{{ titleVal }}</title>
+			
+		</head>
+		
+		<body>
+
+			
+			<img src="..{{ url_for('static', filename='post_image/' + post.imageurl) }}" width="500" height="500"></img>
+			
+			<p><h1> {{ post.title }} </h1></p>
+			{% if author.aid != 1 %}
+				<p><h3><a href="/author/{{ author.aid }}"> {{ author.name }} </a></h3></p>
+			{% else %}
+				<p><h3> {{ author.name }} </h3></p>
+			{% endif %}
+			<p><h5> {{ post.date }} </h5></p>
+			<br>
+			<br>
+			
+			{% for line in lines %}
+				<p aligh="left"> {{ line.replace("\n", "") }} </p>
+			{% endfor %}
+		
+		</body>
+
+</html>
