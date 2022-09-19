@@ -8,7 +8,9 @@
 		<body>
 
 			
-			<img src="..{{ url_for('static', filename='post_image/' + post.imageurl) }}" width="500" height="500"></img>
+			{% if post.imageurl %}
+				<img src="..{{ url_for('static', filename='post_image/' + post.imageurl) }}" width="500" height="500"></img>
+			{% endif %}
 			
 			<p><h1> {{ post.title }} </h1></p>
 			{% if author.aid != 1 %}
